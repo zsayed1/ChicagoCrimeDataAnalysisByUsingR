@@ -1,0 +1,178 @@
+Crime is an international concern, but it is documented and handled in very different ways in different countries. In the United States, violent crimes and property crimes are recorded by the Federal Bureau of Investigation (FBI).  Additionally, each city documents crime, and some cities release data regarding crime rates. The city of Chicago, Illinois releases crime data from 2001 onward online.
+
+Chicago is the third most populous city in the United States, with a population of over 2.7 million people. The city of Chicago is shown in the map below, with the state of Illinois highlighted in red. 
+
+There are two main types of crimes: violent crimes, and property crimes. In this problem, we'll focus on one specific type of property crime, called "motor vehicle theft" (sometimes referred to as grand theft auto). This is the act of stealing, or attempting to steal, a car. In this problem, we'll use some basic data analysis in R to understand the motor vehicle thefts in Chicago. 
+
+descriptions of the variables:
+
+ID: a unique identifier for each observation
+Date: the date the crime occurred
+LocationDescription: the location where the crime occurred
+Arrest: whether or not an arrest was made for the crime (TRUE if an arrest was made, and FALSE if an arrest was not made)
+Domestic: whether or not the crime was a domestic crime, meaning that it was committed against a family member (TRUE if it was domestic, and FALSE if it was not domestic)
+Beat: the area, or "beat" in which the crime occurred. This is the smallest regional division defined by the Chicago police department.
+District: the police district in which the crime occured. Each district is composed of many beats, and are defined by the Chicago Police Department.
+CommunityArea: the community area in which the crime occurred. Since the 1920s, Chicago has been divided into what are called "community areas", of which there are now 77. The community areas were devised in an attempt to create socially homogeneous regions.
+Year: the year in which the crime occurred.
+Latitude: the latitude of the location at which the crime occurred.
+Longitude: the longitude of the location at which the crime occurred.
+
+'data.frame':	191641 obs. of  11 variables
+
+AIRPORT BUILDING NON-TERMINAL - SECURE AREA 
+                                              1 
+                 AIRPORT EXTERIOR - SECURE AREA 
+                                              1 
+                                ANIMAL HOSPITAL 
+                                              1 
+                                APPLIANCE STORE 
+                                              1 
+                                      CTA TRAIN 
+                                              1 
+                        JAIL / LOCK-UP FACILITY 
+                                              1 
+                                      NEWSSTAND 
+                                              1 
+                                         BRIDGE 
+                                              2 
+              COLLEGE/UNIVERSITY RESIDENCE HALL 
+                                              2 
+                              CURRENCY EXCHANGE 
+                                              2 
+                                  BOWLING ALLEY 
+                                              3 
+                                 CLEANING STORE 
+                                              3 
+                          MEDICAL/DENTAL OFFICE 
+                                              3 
+                             ABANDONED BUILDING 
+                                              4 
+AIRPORT BUILDING NON-TERMINAL - NON-SECURE AREA 
+                                              4 
+                                     BARBERSHOP 
+                                              4 
+                 LAKEFRONT/WATERFRONT/RIVERBANK 
+                                              4 
+                                        LIBRARY 
+                                              4 
+                               SAVINGS AND LOAN 
+                                              4 
+ AIRPORT TERMINAL UPPER LEVEL - NON-SECURE AREA 
+                                              5 
+                                  CHA APARTMENT 
+                                              5 
+                                DAY CARE CENTER 
+                                              5 
+                                   FIRE STATION 
+                                              5 
+                                FOREST PRESERVE 
+                                              6 
+                                           BANK 
+                                              7 
+                              CONVENIENCE STORE 
+                                              7 
+                                     DRUG STORE 
+                                              8 
+                OTHER COMMERCIAL TRANSPORTATION 
+                                              8 
+                                  ATHLETIC CLUB 
+                                              9 
+                  AIRPORT VENDING ESTABLISHMENT 
+                                             10 
+                            AIRPORT PARKING LOT 
+                                             11 
+                      SCHOOL, PRIVATE, BUILDING 
+                                             14 
+                            TAVERN/LIQUOR STORE 
+                                             14 
+                 FACTORY/MANUFACTURING BUILDING 
+                                             16 
+                                  BAR OR TAVERN 
+                                             17 
+                                      WAREHOUSE 
+                                             17 
+                            MOVIE HOUSE/THEATER 
+                                             18 
+                        RESIDENCE PORCH/HALLWAY 
+                                             18 
+                   NURSING HOME/RETIREMENT HOME 
+                                             21 
+                                        TAXICAB 
+                                             21 
+                               DEPARTMENT STORE 
+                                             22 
+                             HIGHWAY/EXPRESSWAY 
+                                             22 
+                       SCHOOL, PRIVATE, GROUNDS 
+                                             23 
+                             VEHICLE-COMMERCIAL 
+                                             23 
+             AIRPORT EXTERIOR - NON-SECURE AREA 
+                                             24 
+              OTHER RAILROAD PROP / TRAIN DEPOT 
+                                             28 
+                             SMALL RETAIL STORE 
+                                             33 
+                              CONSTRUCTION SITE 
+                                             35 
+                                       CAR WASH 
+                                             44 
+                     COLLEGE/UNIVERSITY GROUNDS 
+                                             47 
+                   GOVERNMENT BUILDING/PROPERTY 
+                                             48 
+                                     RESTAURANT 
+                                             49 
+              CHURCH/SYNAGOGUE/PLACE OF WORSHIP 
+                                             56 
+                             GROCERY FOOD STORE 
+                                             80 
+                      HOSPITAL BUILDING/GROUNDS 
+                                            101 
+                       SCHOOL, PUBLIC, BUILDING 
+                                            114 
+                                    HOTEL/MOTEL 
+                                            124 
+                   COMMERCIAL / BUSINESS OFFICE 
+                                            126 
+                    CTA GARAGE / OTHER PROPERTY 
+                                            148 
+                           SPORTS ARENA/STADIUM 
+                                            166 
+                                      APARTMENT 
+                                            184 
+                        SCHOOL, PUBLIC, GROUNDS 
+                                            206 
+                                  PARK PROPERTY 
+                                            255 
+                POLICE FACILITY/VEH PARKING LOT 
+                                            266 
+                               AIRPORT/AIRCRAFT 
+                                            363 
+                        CHA PARKING LOT/GROUNDS 
+                                            405 
+                                       SIDEWALK 
+                                            462 
+                         VEHICLE NON-COMMERCIAL 
+                                            817 
+                                VACANT LOT/LAND 
+                                            985 
+                               RESIDENCE-GARAGE 
+                                           1176 
+                                      RESIDENCE 
+                                           1302 
+                  RESIDENTIAL YARD (FRONT/BACK) 
+                                           1536 
+                         DRIVEWAY - RESIDENTIAL 
+                                           1675 
+                                    GAS STATION 
+                                           2111 
+                                          ALLEY 
+                                           2308 
+                                          OTHER 
+                                           4573 
+                 PARKING LOT/GARAGE(NON.RESID.) 
+                                          14852 
+                                         STREET 
+                                         156564 
